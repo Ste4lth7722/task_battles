@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsaauww8n7n3s"]
+
+[ext_resource type="Script" path="res://scenes/ui_scenes/multiplayer_connections_ui.gd" id="1_lknb4"]
+
+[node name="MultiplayerConnectionsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lknb4")
+
+[node name="BGPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HostGame" type="Button" parent="BGPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.148
+anchor_bottom = 0.133
+offset_left = 46.0
+offset_top = 40.0
+offset_right = 0.503998
+offset_bottom = -0.183998
+text = "HOST GAME"
+
+[node name="JoinGame" type="Button" parent="BGPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.442
+anchor_right = 0.565
+anchor_bottom = 0.156
+offset_left = -0.184021
+offset_top = 52.0
+offset_right = 0.119995
+offset_bottom = -0.0880051
+grow_horizontal = 2
+text = "JOIN A GAME
+"
+
+[node name="StartGame" type="Button" parent="BGPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.863
+anchor_top = 0.904
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.176025
+offset_top = 0.207947
+offset_right = -21.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "START GAME"
+
+[node name="NameInput" type="LineEdit" parent="BGPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.431
+anchor_top = 0.472
+anchor_right = 0.569
+anchor_bottom = 0.528
+offset_left = -0.512024
+offset_top = 0.143982
+offset_right = 0.511963
+offset_bottom = -0.144012
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameText" type="Label" parent="BGPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43
+anchor_top = 0.481
+anchor_right = 0.568
+anchor_bottom = 0.517
+offset_left = -62.36
+offset_top = 0.311981
+offset_right = -170.336
+offset_bottom = -0.0160217
+text = "Name:
+"
+
+[connection signal="pressed" from="BGPanel/HostGame" to="." method="_on_host_game_pressed"]
+[connection signal="pressed" from="BGPanel/JoinGame" to="." method="_on_join_game_pressed"]
+[connection signal="pressed" from="BGPanel/StartGame" to="." method="_on_start_game_pressed"]

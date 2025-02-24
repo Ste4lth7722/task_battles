@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6y6tnkhk7yu"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_6t0k7"]
+[ext_resource type="PackedScene" uid="uid://dsaauww8n7n3s" path="res://scenes/ui_scenes/multiplayer_connections_ui.tscn" id="2_6bbk3"]
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_6t0k7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MultiplayerConnectionsUI" parent="CanvasLayer" instance=ExtResource("2_6bbk3")]

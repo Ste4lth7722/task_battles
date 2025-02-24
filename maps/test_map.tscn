@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://duolberkhknhm"]
+[gd_scene load_steps=9 format=3 uid="uid://duolberkhknhm"]
 
+[ext_resource type="Script" path="res://maps/map_script.gd" id="1_ocxhc"]
 [ext_resource type="PackedScene" uid="uid://d3o45m15lh2um" path="res://scenes/player_stuff/player.tscn" id="1_ro1r6"]
 [ext_resource type="Environment" uid="uid://b1jt3juolbv4q" path="res://environments/sunny_day_blue.tres" id="2_4sc6x"]
+[ext_resource type="Material" uid="uid://dh3r0v1ivjvae" path="res://materials/plain_colours/light_blue.tres" id="2_pk4hx"]
+[ext_resource type="Material" uid="uid://fvp8vlwwbebp" path="res://materials/plain_colours/light_red.tres" id="3_fgomj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sfy7"]
 albedo_color = Color(0.383218, 0.383218, 0.383218, 1)
@@ -12,7 +15,8 @@ size = Vector3(76.715, 0.19, 25.475)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4bny4"]
 data = PackedVector3Array(-38.3575, 0.095, 12.7375, 38.3575, 0.095, 12.7375, -38.3575, -0.095, 12.7375, 38.3575, 0.095, 12.7375, 38.3575, -0.095, 12.7375, -38.3575, -0.095, 12.7375, 38.3575, 0.095, -12.7375, -38.3575, 0.095, -12.7375, 38.3575, -0.095, -12.7375, -38.3575, 0.095, -12.7375, -38.3575, -0.095, -12.7375, 38.3575, -0.095, -12.7375, 38.3575, 0.095, 12.7375, 38.3575, 0.095, -12.7375, 38.3575, -0.095, 12.7375, 38.3575, 0.095, -12.7375, 38.3575, -0.095, -12.7375, 38.3575, -0.095, 12.7375, -38.3575, 0.095, -12.7375, -38.3575, 0.095, 12.7375, -38.3575, -0.095, -12.7375, -38.3575, 0.095, 12.7375, -38.3575, -0.095, 12.7375, -38.3575, -0.095, -12.7375, 38.3575, 0.095, 12.7375, -38.3575, 0.095, 12.7375, 38.3575, 0.095, -12.7375, -38.3575, 0.095, 12.7375, -38.3575, 0.095, -12.7375, 38.3575, 0.095, -12.7375, -38.3575, -0.095, 12.7375, 38.3575, -0.095, 12.7375, -38.3575, -0.095, -12.7375, 38.3575, -0.095, 12.7375, 38.3575, -0.095, -12.7375, -38.3575, -0.095, -12.7375)
 
-[node name="Node3D" type="Node3D"]
+[node name="TestMap" type="Node3D"]
+script = ExtResource("1_ocxhc")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -25,6 +29,9 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_4bny4")
 
 [node name="Player" parent="." instance=ExtResource("1_ro1r6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52679, 0)
+p1_material = ExtResource("2_pk4hx")
+p2_material = ExtResource("3_fgomj")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_4sc6x")

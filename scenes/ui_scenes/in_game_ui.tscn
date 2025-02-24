@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp85b2mwub4au"]
+
+[ext_resource type="Script" path="res://scenes/in_game_ui.gd" id="1_v7868"]
+[ext_resource type="Theme" uid="uid://t3np4yjx335m" path="res://ui_assets/themes/in_game_main.tres" id="2_ubb3h"]
+
+[node name="InGameUI" type="Control" node_paths=PackedStringArray("control_switch_timer", "current_controller_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_v7868")
+control_switch_timer = NodePath("TimerPanel/ControlSwitchTimer")
+current_controller_label = NodePath("CurrentControllerPanel/CurrentControllerLabel")
+
+[node name="TimerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_top = 10.0
+offset_right = 44.0
+offset_bottom = 61.0
+grow_horizontal = 2
+
+[node name="ControlSwitchTimer" type="Label" parent="TimerPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -19.5
+offset_right = 36.0
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ubb3h")
+text = "10"
+horizontal_alignment = 1
+
+[node name="CurrentControllerPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.144
+anchor_bottom = 0.091
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 0.111984
+offset_bottom = 2.032
+
+[node name="CurrentControllerLabel" type="Label" parent="CurrentControllerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.372
+anchor_right = 1.0
+anchor_bottom = 0.66
+offset_left = 11.0
+offset_top = -5.624
+offset_right = -11.0
+offset_bottom = 5.28
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.678431, 0.847059, 0.901961, 1)
+text = "Player 1 Control"
+horizontal_alignment = 1
